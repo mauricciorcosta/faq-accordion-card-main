@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Fonts */
+    --text: 'Kumbh Sans', sans-serif;
+
+    /* Text Colors */
+    --veryDarkDesatBlue: #1d1e35;
+    --softRed: #f47c57;
+    --veryDarkGrayishBlue: #4a4b5e;
+    --darkGrayishBlue: #787887;
+    --darkGrayishBlueTransp: #78788739;
+
+    /* Backgound */
+    --background: linear-gradient(180deg, #af67e9, #6565e7);
+}
+
+* {
+    /* outline: 2px solid red; */
+}
+
+html {
+    height: 100%;
+    background: var(--background) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: var(--text);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding-top: 8em; */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 100%;
+    max-width: 375px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10em 2em 4em 2em;
+    margin: 2em;
+    margin-top: 10em;
+    box-shadow: 0 4em 5em -3em rgba(0, 0, 0, 0.733);
+}
+
+.img {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    top: 15px;
+    background-image: url("../img/illustration-woman-online-mobile.svg");
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2.5em 0 #26262619);
+}
+
+.faq {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1em;
+}
+
+.btn {
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    padding: 1.2em 0;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid var(--darkGrayishBlueTransp);
+    text-align: left;
+}
+
+.btn::after {
+    content: url("../img/icon-arrow-down.svg");
+    font-size: 12px;
+    float: right;
+    margin-left: 2em;
+    transition: .5s;
+}
+
+.btn:hover {
+    color: var(--softRed);
+}
+
+.active::after {
+    content: url("../img/icon-arrow-down.svg");
+    font-size: 12px;
+    transform: rotate(180deg);
+}
+
+.active {
+    color: var(--softRed);
+    font-weight: 700;
+    transition: .5s;
+}
+
+.item {
+    color: var(--darkGrayishBlue);
+    display: none;
+    overflow: hidden;
+    padding: 1em 3em 1em 0 ;
+    max-height: 0;
+    transition: max-height .5s ease;
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        padding: 0;
+        align-items: center;
+    }
+    .container {
+        position: relative;
+        width: 700px;
+        max-width: 700px;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 2em 4em 6.5em 5em;
+        margin: 0;
+    }
+
+    .content {
+        width: 50%;
+    }
+
+    .faq {
+        margin-top: 1em;
+    }
+
+    .img {
+        zoom: 1.5;
+        top: 0;
+        left: 0;
+        transform: translate(-10%, 20%);
+    }
+}
